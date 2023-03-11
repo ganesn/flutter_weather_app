@@ -28,9 +28,9 @@ Widget additionalInformation( String wind ,String humidity, String pressure, Str
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("$wind",style:infoFont),
+              Text("${wind}m/s",style:infoFont),
               SizedBox(height: 18.0),
-               Text("$pressure",style:infoFont),
+               Text("${pressure}hPa",style:infoFont),
             
             ],
           ),
@@ -48,9 +48,9 @@ Widget additionalInformation( String wind ,String humidity, String pressure, Str
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("$humidity",style:infoFont),
+              Text("$humidity%",style:infoFont),
               SizedBox(height: 18.0),
-               Text("$feel_like",style:infoFont),
+               Text("${feel_like}°C",style:infoFont),
             
             ],
           )

@@ -37,9 +37,9 @@ class _HomePageState extends State<HomePage> {
   // }
 
   Weather? data;
-  String countryValue = "";
-  String stateValue = "";
-  String cityValue = "";
+  String countryValue = "India";
+  String stateValue = "Tamil Nadu";
+  String cityValue = "Chennai";
   String address = "";
   Future<void> getData() async {
     data = await client
@@ -68,7 +68,10 @@ class _HomePageState extends State<HomePage> {
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
               return SingleChildScrollView(
-                  child: Column(
+                  child:Container(padding: EdgeInsets.all(8.0), decoration:  BoxDecoration(
+              border:  Border.all(color: Colors.grey),
+              color: Colors.white,
+            ),child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CSCPicker(
@@ -174,7 +177,7 @@ class _HomePageState extends State<HomePage> {
                     ///Show only specific countries using country filter
                     // countryFilter: ["United States", "Canada", "Mexico"],
                   ),
-                  currentWeather(Icons.wb_sunny_rounded, "${data!.temp}",
+                  currentWeather(AssetImage("img/${data!.icon}.png"), "${data!.temp}",
                       "${data!.cityName}"),
                   SizedBox(height: 60.0),
                   Text(
@@ -191,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                   additionalInformation("${data!.wind}", "${data!.humidity}",
                       "${data!.pressure}", "${data!.feels_like}"),
                 ],
-              ));
+              )));
             } else if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(
                 child: CircularProgressIndicator(),
