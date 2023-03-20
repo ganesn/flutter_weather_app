@@ -1,8 +1,10 @@
 # weather_app
 
-A new Flutter project.
+A new Flutter project. For Weather Fetching From OpenWeather 
 
 ## Getting Started
+
+Here By selecting the differnt cities we can fetch the current Weathers 
 
 This project is a starting point for a Flutter application.
 
